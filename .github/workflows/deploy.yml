@@ -11,6 +11,7 @@ jobs:
         with:
           token: ${{ secrets.VERCEL_TOKEN }}
           projectName: products1 # project name in Vercel
+          envVariableKeys: MONGODB_URL,MONGODB_DB
       # deploy app to vercel
       - name: deploy site to vercel      
         uses: amondnet/vercel-action@v20
