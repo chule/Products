@@ -1,27 +1,27 @@
 import { useState } from "react";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import { useProducts } from "../lib/hooks";
 import { Grid } from "@mui/material";
+import Container from "@mui/material/Container";
 import ProductCard from "../components/card";
 import AppBarMain from "../components/appBar";
+import { useProducts } from "../lib/hooks";
 
 export default function Home() {
   const { products, isLoading, isError } = useProducts();
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Products</title>
         <meta name="description" content="Products" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <Container maxWidth="xl">
         <AppBarMain setSearchTerm={setSearchTerm} />
-        <Grid container spacing={2} maxWidth="xl" sx={{ marginTop: "5px" }}>
+        <Grid container spacing={2} sx={{ marginTop: "5px" }}>
           {!isError &&
             !isLoading &&
             products
@@ -49,9 +49,9 @@ export default function Home() {
                 );
               })}
         </Grid>
-      </main>
+      </Container>
 
       <footer className={styles.footer}>Powered by Random Products</footer>
-    </div>
+    </>
   );
 }
