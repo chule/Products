@@ -6,40 +6,41 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import Link from "next/link";
 
 export default function ProductCard({ title, image, description, price, id }) {
-  console.log(price);
-  return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        alt="Product image"
-        height="250"
-        image={image}
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary"></Typography>
 
-        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-          <div>Price:</div>
-          <div>{price}</div>
-        </Box>
-        <Box
-          minHeight={70}
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-end",
-          }}
-        >
-          <Typography gutterBottom variant="h6" component="div">
-            {title}
-          </Typography>
-        </Box>
-      </CardContent>
-      {/* <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions> */}
-    </Card>
+  return (
+    <Link href={`/product/${id}`}>
+      <Card sx={{ maxWidth: 345,  cursor: "pointer" }}>
+        <CardMedia
+        //   sx={{ cursor: "pointer" }}
+          component="img"
+          alt="Product image"
+          height="250"
+          image={image}
+        />
+        <CardContent>
+          <Typography variant="body2" color="text.secondary"></Typography>
+
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            <div>Price:</div>
+            <div>{price}</div>
+          </Box>
+          <Box 
+            minHeight={70}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-end",
+            }}
+          >
+            <Typography gutterBottom variant="h6" component="div">
+              {title}
+            </Typography>
+          </Box>
+        </CardContent>
+      </Card>
+    </Link>
   );
 }
