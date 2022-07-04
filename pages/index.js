@@ -44,6 +44,7 @@ export default function Home() {
                       description={d.description}
                       price={d.price}
                       image={d.image}
+                      rating={d.rating}
                     />
                   </Grid>
                 );

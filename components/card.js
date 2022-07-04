@@ -5,11 +5,10 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Link from "next/link";
 
-export default function ProductCard({ title, image, description, price, id }) {
-
+export default function ProductCard({ title, image, price, id, rating }) {
   return (
     <Link href={`/product/${id}`}>
-      <Card sx={{ maxWidth: 345,  cursor: "pointer" }}>
+      <Card sx={{ maxWidth: 345, cursor: "pointer" }}>
         <CardMedia
           component="img"
           alt="Product image"
@@ -20,10 +19,10 @@ export default function ProductCard({ title, image, description, price, id }) {
           <Typography variant="body2" color="text.secondary"></Typography>
 
           <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-            <div>Price:</div>
-            <div>{price}</div>
+            <div>{`Price: ${price}`}</div>
+            <div>{`${rating.rate}/${rating.count}`}</div>
           </Box>
-          <Box 
+          <Box
             minHeight={70}
             sx={{
               display: "flex",
