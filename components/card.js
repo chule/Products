@@ -24,14 +24,22 @@ export default function ProductCard({ title, image, description, price, id }) {
           <div>Price:</div>
           <div>{price}</div>
         </Box>
-
-        <Typography gutterBottom variant="h6" component="div" minHeight={50}>
-          {title}
-        </Typography>
+        <Box
+          minHeight={70}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-end",
+          }}
+        >
+          <Typography gutterBottom variant="h6" component="div">
+            {title}
+          </Typography>
+        </Box>
       </CardContent>
-      <CardActions>
+      {/* <CardActions>
         <Button size="small">Learn More</Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 }
