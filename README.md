@@ -20,6 +20,8 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+Search field on the top of the page can be used to free search products for any match either in Price or Title.
+
 ## Deployed version:
 
-[https://products-eight-chi.vercel.app/](https://products-eight-chi.vercel.app/)
+[products-chule.vercel.app](products-chule.vercel.app)
